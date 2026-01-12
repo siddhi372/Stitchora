@@ -7,208 +7,168 @@
 
 <style>
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 32px;
-  border-bottom: 1px solid #eee;
-  background: #D9DBD2;
+body{
+  background:#f6f4ef;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 32px;
+  background:#D9DBD2;
+  border-bottom:1px solid #ddd;
+  position:relative;
+  z-index:1000; /* ✅ IMPORTANT */
 }
 
 /* LEFT */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.logo-img {
-  height: 90px;
-  width: auto;
+.logo-img{
+  height:90px;
 }
 
-.brand-text {
-  font-size: 26px;
-  font-weight: 600;
-  color: #8b2c2c;
+.brand-text{
+  font-size:26px;
+  font-weight:600;
+  color:#8b2c2c;
 }
 
 /* CENTER */
-.nav-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+.nav-center{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
 }
 
-.nav-links a {
-  margin: 0 12px;
-  text-decoration: none;
-  color: #333;
-  font-size: 17px;
-  padding-bottom: 4px;
+.nav-links a{
+  margin:0 12px;
+  text-decoration:none;
+  color:#333;
+  font-size:17px;
 }
 
-.nav-links a.active {
-  font-weight: 600;
-  border-bottom: 2px solid #8b2c2c;
+.nav-links a.active{
+  font-weight:600;
+  border-bottom:2px solid #8b2c2c;
 }
 
-.search-bar {
-  width: 650px;
-  padding: 10px 16px;
-  border-radius: 25px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+.search-bar{
+  width:650px;
+  padding:10px 16px;
+  border-radius:25px;
+  border:1px solid #ccc;
 }
 
-/* RIGHT – AUTH BUTTONS */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+/* RIGHT */
+.nav-right{
+  display:flex;
+  gap:14px;
 }
 
-.auth-btn {
-  padding: 8px 22px;
-  border-radius: 22px;
-  text-decoration: none;
-  font-size: 15px;
-  border: 1.5px solid #8b2c2c;
-  color: #8b2c2c;
-  background: transparent;
-  cursor: pointer;
-  transition: 0.25s;
+.auth-btn{
+  padding:8px 22px;
+  border-radius:22px;
+  border:1.5px solid #8b2c2c;
+  background:transparent;
+  color:#8b2c2c;
+  cursor:pointer;
 }
 
-.auth-btn:hover {
-  background: #8b2c2c;
-  color: #fff;
+.auth-btn:hover{
+  background:#8b2c2c;
+  color:#fff;
 }
 
-/* HERO */
-.hero {
-  height: 80vh;
-  min-height: 520px;
-  background-image: url(images/bac.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+/* ================= HERO ================= */
+.hero{
+  height:80vh;
+  min-height:520px;
+  background:url(images/bac.jpg) center/cover no-repeat;
+  position:relative;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
 }
 
-/* CATEGORY SECTION */
-.categories {
-  padding: 60px 40px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  background: #faf7f5;
+/* ================= CATEGORIES ================= */
+.categories{
+  padding:60px 40px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:30px;
+  background:#faf7f5;
 }
 
-.category-card {
-  background: #fff;
-  padding: 25px;
-  text-align: center;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s;
+.category-card{
+  background:#fff;
+  padding:25px;
+  text-align:center;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.category-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+.category-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.08);
 }
 
-.category-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
+.category-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:15px;
 }
 
-.category-card h3 {
-  font-size: 18px;
-  margin-bottom: 6px;
+.category-card h3{
+  font-size:18px;
+  margin-bottom:6px;
 }
 
-.category-card p {
-  font-size: 14px;
-  color: #666;
+.category-card p{
+  font-size:14px;
+  color:#666;
 }
 
-/* AI STRIP */
-.ai-strip {
-  background: #D9DBD2;
-  padding: 50px 40px;
-  text-align: center;
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .search-bar{width:260px;}
+  .categories{grid-template-columns:repeat(2,1fr);}
 }
 
-.ai-strip h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.ai-strip p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.ai-strip button {
-  padding: 12px 26px;
-  border: none;
-  background: #8b2c2c;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .search-bar {
-    width: 260px;
-  }
-
-  .categories {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .nav-links,
-  .search-bar {
-    display: none;
-  }
-
-  .categories {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:600px){
+  .nav-links,.search-bar{display:none;}
+  .categories{grid-template-columns:1fr;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="navbar">
   <div class="nav-left">
-    <img src="images/logo.png" alt="Stitchora Logo" class="logo-img">
+    <img src="images/logo.png" class="logo-img">
     <span class="brand-text">STITCHORA</span>
   </div>
 
@@ -216,61 +176,57 @@
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="men.html">Men</a>
-      <a href="#" class="active">Women</a>
-      <a href="#">Couple</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact Us</a>
-      <a href="#">Our Work</a>
+      <a class="active">Women</a>
+      <a href="couple.html">Couple</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </nav>
 
-    <input type="text" class="search-bar"
-      placeholder="Search for styles, fabrics, designs...">
+    <input class="search-bar" placeholder="Search for styles, fabrics, designs...">
   </div>
 
   <div class="nav-right">
-    <a href="#" class="auth-btn">Login</a>
-    <a href="#" class="auth-btn">Register</a>
+    <button class="auth-btn">Login</button>
+    <button class="auth-btn">Register</button>
   </div>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="hero"></section>
 
+<!-- ================= CATEGORIES ================= -->
 <section class="categories">
-  <div class="category-card">
-    <img src="images/cust.jpeg" alt="Custom Stitching">
+
+  <div class="category-card" onclick="location.href='women-stitching.html'">
+    <img src="images/cust.jpg">
     <h3>Custom Stitching</h3>
     <p>Upload design & book tailor visit</p>
   </div>
 
-  <div class="category-card">
-    <img src="images/rent.png" alt="Rent Outfits">
+  <div class="category-card" onclick="location.href='women-rent.html'">
+    <img src="images/rentw.jpg">
     <h3>Rent</h3>
     <p>Rent premium outfits</p>
   </div>
 
   <div class="category-card">
-    <img src="images/sell.jpeg" alt="Sell Clothes">
+    <img src="images/sell.jpeg">
     <h3>Sell</h3>
     <p>Sell your unused clothes</p>
   </div>
 
   <div class="category-card">
-    <img src="images/ai.jpeg" alt="AI Styling">
+    <img src="images/ai.jpeg">
     <h3>AI Styling</h3>
-    <p>Get outfit & accessory suggestions</p>
+    <p>Get outfit suggestions</p>
   </div>
 
   <div class="category-card">
-    <img src="images/gem.png" alt="Embroidery">
+    <img src="images/gem.png">
     <h3>Embroidery</h3>
-    <p>Get outfit & accessory suggestions</p>
+    <p>Custom embroidery work</p>
   </div>
-</section>
 
-<section class="ai-strip">
-  <h2>Styled by AI. Tailored for You.</h2>
-  <p>Get outfit suggestions and assign the perfect tailor instantly.</p>
-  <button>Try AI Styling</button>
 </section>
 
 </body>
