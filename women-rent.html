@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women Rent | Stitchora</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  background:#f4f4f4;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 32px;
+  background:#D9DBD2;
+}
+.logo-img{height:60px;}
+.brand-text{
+  font-size:24px;
+  font-weight:600;
+  color:#8b2c2c;
+}
+.nav-links a{
+  margin:0 12px;
+  text-decoration:none;
+  color:#333;
+}
+.nav-links a.active{
+  font-weight:600;
+  border-bottom:2px solid #8b2c2c;
+}
+
+/* PRODUCTS */
+.products{
+  padding:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+.product-card{
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  text-align:center;
+}
+.product-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:8px;
+}
+.product-info{padding-top:10px;}
+.product-info h3{font-size:16px;margin-bottom:6px;}
+.price{
+  font-size:15px;
+  font-weight:600;
+  color:#8b2c2c;
+  margin-bottom:10px;
+}
+.rent-btn{
+  display:block;
+  padding:12px;
+  background:#b22222;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+}
+.rent-btn:hover{background:#8b1a1a;}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div>
+    <img src="images/logo.png" class="logo-img">
+    <span class="brand-text">STITCHORA</span>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="men-rent.html">Men</a>
+    <a href="women-rent.html" class="active">Women</a>
+    <a href="couple.html">Couple</a>
+  </nav>
+</header>
+
+<section class="products">
+
+  <div class="product-card">
+    <img src="images/women1.jpg">
+    <div class="product-info">
+      <h3>Crimson Lehenga</h3>
+      <p class="price">₹1499 / day</p>
+      <a href="rent-booking.html?name=Crimson Lehenga&price=1499&img=images/women1.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women2.jpg">
+    <div class="product-info">
+      <h3>Midnight Saree</h3>
+      <p class="price">₹999 / day</p>
+      <a href="rent-booking.html?name=Midnight Saree&price=999&img=images/women2.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women3.jpg">
+    <div class="product-info">
+      <h3>Rose Blush Gown</h3>
+      <p class="price">₹1299 / day</p>
+      <a href="rent-booking.html?name=Rose Blush Gown&price=1299&img=images/women3.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women4.jpg" alt="Ivory Sharara Set">
+    <div class="product-info">
+      <h3>Ivory Sharara Set</h3>
+      <p class="price">₹899 / day</p>
+      <a href="rent-booking.html?name=Ivory Sharara Set&price=899" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women5.jpg" alt="Mint Pastel Anarkali">
+    <div class="product-info">
+      <h3>Mint Pastel Anarkali</h3>
+      <p class="price">₹1499 / day</p>
+      <a href="rent-booking.html?name=Mint Pastel Anarkali&price=1499" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women6.jpg" alt="Floral Fusion Set">
+    <div class="product-info">
+      <h3>Floral Fusion Set</h3>
+      <p class="price">₹1399 / day</p>
+      <a href="rent-booking.html?name=Floral Fusion Set&price=1399" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women7.jpg" alt="Olive Green Lehenga">
+    <div class="product-info">
+      <h3>Olive Green Lehenga</h3>
+      <p class="price">₹1999 / day</p>
+      <a href="rent-booking.html?name=Olive Green Lehenga&price=1999" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women8.jpg" alt="Royal Blue Saree">
+    <div class="product-info">
+      <h3>Royal Blue Saree</h3>
+      <p class="price">₹1099 / day</p>
+      <a href="rent-booking.html?name=Royal Blue Saree&price=1099" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women9.jpg" alt="Sapphire Evening Gown">
+    <div class="product-info">
+      <h3>Sapphire Evening Gown</h3>
+      <p class="price">₹1199 / day</p>
+      <a href="rent-booking.html?name=Sapphire Evening Gown&price=1199" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women10.jpg" alt="Emerald Velvet Lehenga">
+    <div class="product-info">
+      <h3>Emerald Velvet Lehenga</h3>
+      <p class="price">₹1499 / day</p>
+      <a href="rent-booking.html?name=Emerald Velvet Lehenga&price=1499" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women11.jpg" alt="Heavy Bridal Saree">
+    <div class="product-info">
+      <h3>Heavy Bridal Saree</h3>
+      <p class="price">₹1099 / day</p>
+      <a href="rent-booking.html?name=Heavy Bridal Saree&price=1099" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women12.jpg" alt="Silver Sequin Gown">
+    <div class="product-info">
+      <h3>Silver Sequin Gown</h3>
+      <p class="price">₹1399 / day</p>
+      <a href="rent-booking.html?name=Silver Sequin Gown&price=1399" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women13.jpg" alt="Purple Silk Kurta">
+    <div class="product-info">
+      <h3>Purple Silk Kurta</h3>
+      <p class="price">₹999 / day</p>
+      <a href="rent-booking.html?name=Purple Silk Kurta&price=999" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women14.jpg" alt="Sky Blue Net Anarkali">
+    <div class="product-info">
+      <h3>Sky Blue Net Anarkali</h3>
+      <p class="price">₹1599 / day</p>
+      <a href="rent-booking.html?name=Sky Blue Net Anarkali&price=1599" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women15.jpg" alt="Cream Wedding Gown">
+    <div class="product-info">
+      <h3>Cream Wedding Gown</h3>
+      <p class="price">₹1499 / day</p>
+      <a href="rent-booking.html?name=Cream Wedding Gown&price=1499" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women16.jpg" alt="Grey Stone Anarkali">
+    <div class="product-info">
+      <h3>Grey Stone Anarkali</h3>
+      <p class="price">₹1699 / day</p>
+      <a href="rent-booking.html?name=Grey Stone Anarkali&price=1699" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women17.jpg" alt="Wine Maroon Sharara">
+    <div class="product-info">
+      <h3>Wine Maroon Sharara</h3>
+      <p class="price">₹1299 / day</p>
+      <a href="rent-booking.html?name=Wine Maroon Sharara&price=1299" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women18.jpg" alt="Champagne Slit Gown">
+    <div class="product-info">
+      <h3>Champagne Slit Gown</h3>
+      <p class="price">₹1399 / day</p>
+      <a href="rent-booking.html?name=Champagne Slit Gown&price=1399" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women19.jpg" alt="Ruby Red Saree">
+    <div class="product-info">
+      <h3>Ruby Red Saree</h3>
+      <p class="price">₹1199 / day</p>
+      <a href="rent-booking.html?name=Ruby Red Saree&price=1199" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women20.jpg" alt="Mauve Shimmer Gown">
+    <div class="product-info">
+      <h3>Mauve Shimmer Gown</h3>
+      <p class="price">₹1599 / day</p>
+      <a href="rent-booking.html?name=Mauve Shimmer Gown&price=1599" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women21.jpg" alt="Lavender Puff Sleeve Gown">
+    <div class="product-info">
+      <h3>Lavender Puff Gown</h3>
+      <p class="price">₹1399 / day</p>
+      <a href="rent-booking.html?name=Lavender Puff Gown&price=1399" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/women22.jpg" alt="Peach Floral Suit">
+    <div class="product-info">
+      <h3>Peach Floral Suit</h3>
+      <p class="price">₹999 / day</p>
+      <a href="rent-booking.html?name=Peach Floral Suit&price=999" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

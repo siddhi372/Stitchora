@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rent Booking | Stitchora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
+body{background:#f4f4f4;padding:40px;}
+.container{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+.outfit-img{
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  border-radius:8px;
+}
+.price{
+  font-size:18px;
+  font-weight:600;
+  color:#b22222;
+  margin-bottom:15px;
+}
+label{display:block;margin-top:12px;font-size:14px;}
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+button{
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  background:#b22222;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div>
+    <img id="outfitImage" class="outfit-img">
+  </div>
+
+  <div>
+    <h2 id="outfitName"></h2>
+    <div class="price">₹<span id="pricePerDay"></span> / day</div>
+
+    <label>Name</label>
+    <input type="text">
+
+    <label>Address</label>
+    <textarea></textarea>
+
+    <label>From Date</label>
+    <input type="date" id="fromDate">
+
+    <label>To Date</label>
+    <input type="date" id="toDate">
+
+    <h3>Total: ₹<span id="totalPrice">0</span></h3>
+    <button>Confirm Rent</button>
+  </div>
+</div>
+
+<script>
+const params=new URLSearchParams(window.location.search);
+const name=params.get("name");
+const price=params.get("price");
+const img=params.get("img");
+
+document.getElementById("outfitName").innerText=name;
+document.getElementById("pricePerDay").innerText=price;
+document.getElementById("outfitImage").src=img;
+
+const fromDate=document.getElementById("fromDate");
+const toDate=document.getElementById("toDate");
+const total=document.getElementById("totalPrice");
+
+function calc(){
+  if(fromDate.value && toDate.value){
+    const d1=new Date(fromDate.value);
+    const d2=new Date(toDate.value);
+    const days=Math.ceil((d2-d1)/(1000*60*60*24))+1;
+    total.innerText=days>0?days*price:0;
+  }
+}
+fromDate.onchange=calc;
+toDate.onchange=calc;
+</script>
+
+</body>
+</html>

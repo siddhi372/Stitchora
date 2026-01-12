@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Couple Stitching | Stitchora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid #eee;
+  background: #D9DBD2;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 70px;
+}
+
+.brand-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8b2c2c;
+}
+
+.nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.nav-links a.active {
+  font-weight: 600;
+  border-bottom: 2px solid #8b2c2c;
+}
+
+.search-bar {
+  width: 500px;
+  padding: 8px 14px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+.nav-right {
+  display: flex;
+  gap: 12px;
+}
+
+.auth-btn {
+  padding: 8px 20px;
+  border-radius: 22px;
+  text-decoration: none;
+  border: 1.5px solid #8b2c2c;
+  color: #8b2c2c;
+  transition: 0.25s;
+}
+
+.auth-btn:hover {
+  background: #8b2c2c;
+  color: #fff;
+}
+
+/* FORM BOX */
+.container{
+  max-width:560px;
+  background:#fff;
+  margin:40px auto;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
+  font-size:14px;
+  color:#666;
+  margin-bottom:25px;
+}
+
+/* LABELS */
+label{
+  display:block;
+  margin-top:18px;
+  font-size:14px;
+}
+
+/* INPUTS */
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* UPLOAD */
+.upload-box{
+  margin-top:10px;
+  border:2px dashed #b22222;
+  border-radius:12px;
+  padding:30px;
+  text-align:center;
+  cursor:pointer;
+  background:#fffafa;
+  position:relative;
+  transition:0.3s;
+}
+
+.upload-box:hover{
+  background:#ffecec;
+}
+
+.upload-box span{
+  font-size:45px;
+}
+
+.upload-box h4{
+  margin-top:10px;
+  font-size:16px;
+  color:#b22222;
+}
+
+.upload-box p{
+  font-size:13px;
+  color:#666;
+}
+
+.upload-box input{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  cursor:pointer;
+}
+
+/* IMAGE PREVIEW */
+.preview{
+  display:none;
+  width:100%;
+  margin-top:15px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  margin-top:25px;
+  padding:14px;
+  background:#b22222;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#8b1a1a;
+}
+
+/* NOTE BELOW BUTTON */
+.note{
+  text-align:center;
+  margin-top:10px;
+  font-size:13px;
+  color:#555;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .nav-links,
+  .search-bar{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">
+    <img src="images/logo.png" class="logo-img" alt="Logo">
+    <span class="brand-text">STITCHORA</span>
+  </div>
+
+  <div class="nav-center">
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+      <a href="couple.html" class="active">Couple</a>
+    </nav>
+    <input type="text" class="search-bar" placeholder="Search couple outfits...">
+  </div>
+
+  <div class="nav-right">
+    <a href="login.html" class="auth-btn">Login</a>
+    <a href="signup.html" class="auth-btn">Register</a>
+  </div>
+</header>
+
+<!-- FORM -->
+<div class="container">
+  <h2>Couple Custom Stitching</h2>
+  <p class="subtitle">Upload designs for both partners and book a tailor visit</p>
+
+  <form>
+
+    <label>Design Reference – His</label>
+    <div class="upload-box">
+      <span>👔</span>
+      <h4>Upload His Outfit Design</h4>
+      <p>JPG, PNG • Mobile photo accepted</p>
+      <input type="file" accept="image/*" onchange="preview(event,'hisPreview')" required>
+    </div>
+    <img id="hisPreview" class="preview">
+
+    <label>Design Reference – Her</label>
+    <div class="upload-box">
+      <span>👗</span>
+      <h4>Upload Her Outfit Design</h4>
+      <p>JPG, PNG • Mobile photo accepted</p>
+      <input type="file" accept="image/*" onchange="preview(event,'herPreview')" required>
+    </div>
+    <img id="herPreview" class="preview">
+
+    <label>Fabric Preference</label>
+    <input type="text" placeholder="Cotton, Silk, Linen..." required>
+
+    <label>Home Address</label>
+    <textarea placeholder="Enter full address for tailor visit" required></textarea>
+
+    <label>Preferred Visit Date</label>
+    <input type="date" required>
+
+    <!-- ✅ Button and note -->
+    <button type="submit">Request Tailor Visit</button>
+    <p class="note">
+      Don’t worry — 2 tailors will be provided, one for men and one for women measurements.😄
+    </p>
+
+  </form>
+</div>
+
+<script>
+function preview(event, id){
+  const img = document.getElementById(id);
+  img.src = URL.createObjectURL(event.target.files[0]);
+  img.style.display = "block";
+}
+</script>
+
+</body>
+</html>

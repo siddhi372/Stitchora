@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rent Men | Stitchora</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid #eee;
+  background: #D9DBD2;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 70px;
+}
+
+.brand-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8b2c2c;
+}
+
+.nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.nav-links a.active {
+  font-weight: 600;
+  border-bottom: 2px solid #8b2c2c;
+}
+
+.search-bar {
+  width: 500px;
+  padding: 8px 14px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+.nav-right {
+  display: flex;
+  gap: 12px;
+}
+
+.auth-btn {
+  padding: 8px 20px;
+  border-radius: 22px;
+  text-decoration: none;
+  border: 1.5px solid #8b2c2c;
+  color: #8b2c2c;
+  transition: 0.25s;
+}
+
+.auth-btn:hover {
+  background: #8b2c2c;
+  color: #fff;
+}
+
+/* PRODUCTS GRID */
+.products{
+  padding:50px 40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:30px;
+}
+
+/* CARD */
+.product-card{
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  transition:0.3s;
+  text-align:center;
+}
+
+.product-card:hover{
+  transform:translateY(-6px);
+}
+
+.product-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* INFO */
+.product-info{
+  padding-top:12px;
+}
+
+.product-info h3{
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+/* RENT BUTTON */
+.rent-btn{
+  display:block;
+  width:100%;
+  padding:12px;
+  background:#b22222;
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  border-radius:6px;
+}
+
+.rent-btn:hover{
+  background:#8b1a1a;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .products{
+    padding:25px;
+  }
+  .nav-links,
+  .search-bar{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">
+    <img src="images/logo.png" class="logo-img" alt="Logo">
+    <span class="brand-text">STITCHORA</span>
+  </div>
+
+  <div class="nav-center">
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="men.html" class="active">Men</a>
+      <a href="women.html">Women</a>
+      <a href="couple.html">Couple</a>
+    </nav>
+    <input type="text" class="search-bar" placeholder="Search men's outfits...">
+  </div>
+
+  <div class="nav-right">
+    <a href="login.html" class="auth-btn">Login</a>
+    <a href="signup.html" class="auth-btn">Register</a>
+  </div>
+</header>
+
+<!-- PRODUCTS GRID -->
+<section class="products">
+
+  <div class="product-card">
+    <img src="images/rent1.jpg">
+    <div class="product-info">
+      <h3>Armani Outfit</h3>
+      <p class="price">₹1499 / day</p>
+      <a href="rent-booking.html?name=Armani Outfit&price=1499&img=images/rent1.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent2.jpg">
+    <div class="product-info">
+      <h3>Sherwani</h3>
+      <p class="price">₹1099 / day</p>
+      <a href="rent-booking.html?name=Sherwani Outfit&price=1099&img=images/rent2.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent3.jpg">
+    <div class="product-info">
+      <h3>Ivory Prince Coat</h3>
+      <p class="price">₹699 / day</p>
+      <a href="rent-booking.html?name=Ivory Prince Coat Outfit&price=699&img=images/rent3.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent4.jpg">
+    <div class="product-info">
+      <h3>Silk Embroidery Kurta</h3>
+      <p class="price">₹999 / day</p>
+      <a href="rent-booking.html?name=Silk Embroidery Kurta Outfit&price=999&img=images/rent4.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent5.jpg">
+    <div class="product-info">
+      <h3>Ice Blue Sherwani</h3>
+      <p class="price">₹1599 / day</p>
+      <a href="rent-booking.html?name=Blue Sherwani Outfit&price=1599&img=images/rent5.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent6.jpg">
+    <div class="product-info">
+      <h3>Sherwani Set</h3>
+      <p class="price">₹1399 / day</p>
+      <a href="rent-booking.html?name=Sherwani Set Outfit&price=1399&img=images/rent6.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent7.jpg">
+    <div class="product-info">
+      <h3>Printed Jacket</h3>
+      <p class="price">₹699 / day</p>
+      <a href="rent-booking.html?name=Printed Jacket Outfit&price=699&img=images/rent7.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent8.jpg">
+    <div class="product-info">
+      <h3>Three Piece Suit</h3>
+      <p class="price">₹999 / day</p>
+      <a href="rent-booking.html?name=Three Piece Suit Outfit&price=999&img=images/rent8.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent9.jpg">
+    <div class="product-info">
+      <h3>Pathani Suit</h3>
+      <p class="price">₹999 / day</p>
+      <a href="rent-booking.html?name=Pathani Suit Outfit&price=999&img=images/rent9.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent10.jpg">
+    <div class="product-info">
+      <h3>Floral Kurta</h3>
+      <p class="price">₹699 / day</p>
+      <a href="rent-booking.html?name=Floral Kurta Outfit&price=699&img=images/rent10.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent11.jpg">
+    <div class="product-info">
+      <h3>Kurta Set</h3>
+      <p class="price">₹899 / day</p>
+      <a href="rent-booking.html?name=Kurta Set Outfit&price=899&img=images/rent11.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent12.jpg">
+    <div class="product-info">
+      <h3>Men Suit Set</h3>
+      <p class="price">₹999 / day</p>
+      <a href="rent-booking.html?name=Men Suit Set Outfit&price=999&img=images/rent12.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent13.jpg">
+    <div class="product-info">
+      <h3>Blazer</h3>
+      <p class="price">₹599 / day</p>
+      <a href="rent-booking.html?name=Blazer Outfit&price=599&img=images/rent13.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent14.jpg">
+    <div class="product-info">
+      <h3>Navy Blue Suit</h3>
+      <p class="price">₹1299 / day</p>
+      <a href="rent-booking.html?name=Navy Blue Suit Outfit&price=1299&img=images/rent14.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent15.jpg">
+    <div class="product-info">
+      <h3>Designer Kurta Set</h3>
+      <p class="price">₹1499 / day</p>
+      <a href="rent-booking.html?name=Designer Kurta Set Outfit&price=1499&img=images/rent15.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent16.jpg">
+    <div class="product-info">
+      <h3>Jodhpuri Suit</h3>
+      <p class="price">₹1699 / day</p>
+      <a href="rent-booking.html?name=Jodhpuri Suit Outfit&price=1699&img=images/rent16.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="images/rent17.jpg">
+    <div class="product-info">
+      <h3>Bandhgala</h3>
+      <p class="price">₹1499 / day</p>
+      <a href="rent-booking.html?name=Bandhgala Outfit&price=1499&img=images/rent17.jpg" class="rent-btn">Rent Now</a>
+    </div>
+  </div>
+
+</section>
+
+
+</body>
+</html>
