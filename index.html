@@ -113,32 +113,45 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  animation: slideDown 15s infinite;
+  opacity: 0;
+  animation: fadeSlide 16s infinite;
 }
+
 
 .slide:nth-child(1) {
-  background: url(images/m1.jpeg) center/cover;
+  background: url(images/m1.jpg) center/cover;
 }
 .slide:nth-child(2) {
-  background: url(images/m2.jpeg) center/cover;
-  animation-delay: 5s;
+  background: url(images/m2.jpg) center/cover;
+  animation-delay: 4s;
 }
 .slide:nth-child(3) {
-  background: url(images/m3.jpeg) center/cover;
-  animation-delay: 10s;
+  background: url(images/m3.jpg) center/cover;
+  animation-delay: 8s;
 }
 .slide:nth-child(4) {
-  background: url(images/m4.jpeg) center/cover;
-  animation-delay: 10s;
+  background: url(images/m4.jpg) center/cover;
+  animation-delay: 12s;
 }
 
-@keyframes slideDown {
-  0% { transform: translateY(-100%); opacity: 0; }
-  10% { transform: translateY(0); opacity: 1; }
-  30% { opacity: 1; }
-  40% { opacity: 0; }
-  100% { opacity: 0; }
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
+
 
 .hero-content {
   position: relative;
@@ -386,7 +399,7 @@ footer p {
 <section class="section" id="about">
   <h3>About Us</h3>
   <p>
-    STITCH is a smart fashion design and customization platform that allows
+    STITCHORA is a smart fashion design and customization platform that allows
     designers, tailors and brands to create made-to-measure garments with ease.
     From 3D visualization to production-ready patterns, we simplify fashion creation.
     Stitchora was built on a simple idea: clothes should fit people, not the other way around.
