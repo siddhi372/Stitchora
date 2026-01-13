@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Couple Rent | Stitchora</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{ background:#f6f4ef; }
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 32px;
+  background:#D9DBD2;
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-img{ height:90px; }
+.brand-text{ font-size:26px; font-weight:600; color:#8b2c2c; }
+
+.nav-links a{
+  margin:0 12px;
+  text-decoration:none;
+  color:#333;
+}
+
+.nav-links a.active{
+  font-weight:600;
+  border-bottom:2px solid #8b2c2c;
+}
+
+/* RIGHT */
+.nav-right{
+  display:flex;
+  align-items:center;
+}
+
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+  position:relative;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#ff3f6c;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
+/* ================= TITLE ================= */
+.page-title{
+  text-align:center;
+  padding:40px;
+}
+.page-title h1{
+  font-size:34px;
+  color:#8b2c2c;
+}
+
+/* ================= SLIDER ================= */
+.slider-wrapper{
+  padding:30px 50px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.arrow{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:none;
+  background:#8b2c2c;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(0,0,0,0.25);
+  transition:0.3s;
+}
+.arrow:hover{ transform:scale(1.15); }
+
+.products-slider{
+  display:flex;
+  gap:30px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:10px;
+  flex:1;
+}
+.products-slider::-webkit-scrollbar{ display:none; }
+
+/* ================= CARD ================= */
+.product-card{
+  min-width:260px;
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 12px 28px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.product-card:hover{ transform:translateY(-6px); }
+
+.product-card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.product-info{
+  padding:16px;
+}
+
+.product-info h3{ font-size:18px; }
+.product-info p{ font-size:14px; color:#666; }
+
+.price{
+  margin:10px 0;
+  font-weight:600;
+  color:#8b2c2c;
+}
+
+.rent-btn{
+  width:100%;
+  padding:10px;
+  background:#8b2c2c;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+.rent-btn:hover{ background:#6f1f1f; }
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+  position:relative;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#ff3f6c;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="navbar">
+  <div class="nav-left">
+    <img src="images/logo.png" class="logo-img">
+    <span class="brand-text">STITCHORA</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="couple-rent.html" class="active">Couple</a>
+  </nav>
+
+  <div class="nav-right">
+    <div class="cart-icon" onclick="location.href='cart.html'">
+  🛒 <span id="cartCount">0</span>
+</div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ================= TITLE ================= -->
+<section class="page-title">
+  <h1>Couple Outfit Rentals</h1>
+</section>
+
+<!-- ================= SLIDER ================= -->
+<section class="slider-wrapper">
+  <button class="arrow" onclick="slideLeft()">❮</button>
+  <div class="products-slider" id="productSlider"></div>
+  <button class="arrow" onclick="slideRight()">❯</button>
+</section>
+
+<script>
+const products=[
+["Eternal Royalty",2799],["Radiance",2399],["Engagement Elegance",1999],
+["Heritage Glow",1699],["Wedding Magic",1599],["Sangeet Spark",1899],
+["Haldi Harmony",1399],["Pastel Promise",2499],["Crimson Love",2699],
+["Violet Aura",2899],["Maroon Bliss",1499],["Sangeet Royale",1999],
+["Sunshine Engagement",1299],["Pastel Bliss",2399],["Ruby Romance",2799],
+["Luxe Gold",2999],["Mehendi Glow",1599],["Sangeet Sparkle",1999],
+["Haldi Sunshine Duo",1399],["Pastel Serenity",2499],
+["Ruby Regal",2799],["Maroon Grandeur",2999]
+];
+
+const slider=document.getElementById("productSlider");
+
+products.forEach((p,i)=>{
+slider.innerHTML+=`
+<div class="product-card" data-name="${p[0]}" data-price="${p[1]}" data-img="images/couple${i+1}.jpeg">
+  <img src="images/couple${i+1}.jpeg">
+  <div class="product-info">
+    <h3>${p[0]}</h3>
+    <p>Premium couple outfit</p>
+    <div class="price">₹${p[1]} / day</div>
+    <button class="rent-btn">Rent Now</button>
+  </div>
+</div>`;
+});
+
+/* SLIDE */
+function slideLeft(){ slider.scrollLeft-=320; }
+function slideRight(){ slider.scrollLeft+=320; }
+
+/* AUTO SLIDE */
+setInterval(()=>{
+  slider.scrollLeft + slider.clientWidth >= slider.scrollWidth
+  ? slider.scrollLeft=0
+  : slider.scrollLeft+=320;
+},3000);
+
+/* RENT */
+document.addEventListener("click",e=>{
+  if(e.target.classList.contains("rent-btn")){
+    const card=e.target.closest(".product-card");
+    window.location.href=
+    `rent-booking.html?name=${encodeURIComponent(card.dataset.name)}&price=${card.dataset.price}&img=${encodeURIComponent(card.dataset.img)}`;
+  }
+});
+</script>
+<script>
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").innerText = cart.length;
+}
+
+updateCartCount();
+</script>
+
+</body>
+</html>
