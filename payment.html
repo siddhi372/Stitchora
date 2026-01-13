@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payment | Stitchora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family:Arial;
+  background:#f4f4f4;
+  padding:40px;
+}
+.pay-box{
+  max-width:500px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+h2{text-align:center;margin-bottom:20px;}
+label{display:block;margin-top:15px;}
+input{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+.pay-btn{
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  background:#8b2c2c;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+.success{
+  text-align:center;
+  color:green;
+  margin-top:15px;
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="pay-box">
+  <h2>Payment Details</h2>
+
+  <label>Card Number</label>
+  <input type="text" placeholder="1234 5678 9012 3456">
+
+  <label>Expiry</label>
+  <input type="text" placeholder="MM/YY">
+
+  <label>CVV</label>
+  <input type="password" placeholder="***">
+
+  <button class="pay-btn" onclick="payNow()">Pay Now</button>
+  <div class="success" id="success">Payment Successful ✅</div>
+</div>
+
+<script>
+function payNow(){
+  document.getElementById("success").style.display="block";
+  localStorage.removeItem("cart");
+}
+</script>
+
+</body>
+</html>

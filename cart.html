@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Cart | Stitchora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
+body{background:#f4f4f4;}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 32px;
+  background:#D9DBD2;
+}
+
+.brand-text{
+  font-size:22px;
+  font-weight:600;
+  color:#8b2c2c;
+}
+
+.nav-links a{
+  margin:0 12px;
+  text-decoration:none;
+  color:#333;
+}
+
+.cart-icon{
+  font-size:22px;
+  position:relative;
+  cursor:pointer;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#ff3f6c;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
+/* ===== CART ===== */
+.page{
+  padding:40px;
+}
+
+.cart-box{
+  max-width:1000px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+.cart-item{
+  display:grid;
+  grid-template-columns:120px 1fr auto;
+  gap:20px;
+  padding:20px 0;
+  border-bottom:1px solid #ddd;
+}
+
+.cart-item img{
+  width:120px;
+  height:140px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.cart-info h3{
+  margin-bottom:6px;
+}
+
+.cart-info p{
+  font-size:14px;
+  margin:3px 0;
+}
+
+.price{
+  color:#b22222;
+  font-weight:600;
+}
+
+.remove-btn{
+  background:#ff3f6c;
+  border:none;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  height:fit-content;
+}
+
+.remove-btn:hover{
+  background:#d9365a;
+}
+
+.total-box{
+  text-align:right;
+  margin-top:20px;
+  font-size:20px;
+  font-weight:600;
+}
+
+.empty{
+  text-align:center;
+  padding:60px;
+  font-size:20px;
+  color:#777;
+}
+
+@media(max-width:768px){
+  .cart-item{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <span class="brand-text">STITCHORA</span>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="men-rent.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="couple-rent.html">Couple</a>
+  </nav>
+  <div class="cart-icon">
+    🛒 <span id="cartCount">0</span>
+  </div>
+</header>
+
+<div class="page">
+  <div class="cart-box" id="cartBox"></div>
+</div>
+
+<script>
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").innerText = cart.length;
+}
+updateCartCount();
+
+const cartBox = document.getElementById("cartBox");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function renderCart(){
+  cartBox.innerHTML = "";
+
+  if(cart.length === 0){
+    cartBox.innerHTML = "<div class='empty'>Your cart is empty 🛒</div>";
+    return;
+  }
+
+  let grandTotal = 0;
+
+  cart.forEach((item, index) => {
+    grandTotal += Number(item.total);
+
+    cartBox.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.img}">
+        <div class="cart-info">
+          <h3>${item.name}</h3>
+          <p class="price">₹${item.price} / day</p>
+          <p><b>From:</b> ${item.from}</p>
+          <p><b>To:</b> ${item.to}</p>
+          <p><b>Total:</b> ₹${item.total}</p>
+        </div>
+        <button class="remove-btn" onclick="removeItem(${index})">
+          Remove
+        </button>
+      </div>
+    `;
+  });
+
+  cartBox.innerHTML += `
+    <div class="total-box">
+      Grand Total: ₹${grandTotal}
+    </div>
+    <button onclick="placeOrder()">Place Order</button>
+
+  `;
+}
+
+function removeItem(index){
+  {
+    cart.splice(index,1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    renderCart();
+  }
+}
+
+renderCart();
+
+</script>
+<script>
+function placeOrder(){
+  window.location.href = "success.html";
+}
+</script>
+
+
+</body>
+</html>
