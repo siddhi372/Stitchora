@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women | Embroidery - Stitchora</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+}
+
+/* ===== HEADER (same as men stitching) ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid #eee;
+  background: #D9DBD2;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 70px;
+}
+
+.brand-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8b2c2c;
+}
+
+.nav-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.nav-links a.active {
+  font-weight: 600;
+  border-bottom: 2px solid #8b2c2c;
+}
+
+.nav-right {
+  display: flex;
+  gap: 12px;
+}
+
+.auth-btn {
+  padding: 8px 20px;
+  border-radius: 22px;
+  text-decoration: none;
+  border: 1.5px solid #8b2c2c;
+  color: #8b2c2c;
+}
+
+.auth-btn:hover {
+  background: #8b2c2c;
+  color: #fff;
+}
+
+/* ===== EMBROIDERY GRID ===== */
+.page-head{
+  text-align:center;
+  padding:40px 20px 10px;
+}
+
+.page-head h1{
+  color:#8b2c2c;
+}
+
+.container{
+  padding:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#fff;
+  border-radius:8px;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+
+.card h3{
+  padding:14px 10px 6px;
+}
+
+.stitch-btn{
+  display:inline-block;
+  margin:10px 0 16px;
+  padding:8px 16px;
+  background:#8b2c2c;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+  cursor:pointer;
+}
+
+/* ===== STITCHING FORM ===== */
+.form-section{
+  display:none;
+  margin:40px auto;
+  max-width:520px;
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+}
+
+.form-section h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+label{
+  display:block;
+  margin-top:16px;
+  font-size:14px;
+}
+
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.upload-box{
+  margin-top:10px;
+  border:2px dashed #b22222;
+  border-radius:12px;
+  padding:30px;
+  text-align:center;
+  cursor:pointer;
+  background:#fffafa;
+  position:relative;
+}
+
+.upload-box span{
+  font-size:45px;
+}
+
+.upload-box h4{
+  margin-top:10px;
+  color:#b22222;
+}
+
+.upload-box input{
+  position:absolute;
+  inset:0;
+  opacity:0;
+}
+
+#preview{
+  display:none;
+  width:100%;
+  margin-top:15px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+button{
+  width:100%;
+  margin-top:22px;
+  padding:14px;
+  background:#b22222;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+  <div class="nav-left">
+    <img src="images/stitchora-logo.png" alt="Stitchora" class="logo-img">
+    <span class="brand-text">STITCHORA</span>
+  </div>
+
+  <div class="nav-center">
+    <nav class="nav-links">
+      <a href="women.html" class="active">Women</a>
+      <a href="men.html">Men</a>
+      <a href="#">Collection</a>
+    </nav>
+    <input type="text" class="search-bar" placeholder="Search embroidery designs...">
+  </div>
+
+  <div class="nav-right">
+    <a href="login.html" class="auth-link">Login</a>
+    <span>|</span>
+    <a href="signup.html" class="auth-link">Register</a>
+  </div>
+
+</header>
+
+<!-- PAGE TITLE -->
+<section class="page-head">
+  <h1>Embroidery Collection</h1>
+  <p>Choose the perfect embroidery style for your outfit</p>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://lh7-us.googleusercontent.com/AdDtbcR7fiFwj4b9xWZPgcjf6phGKZ-nn2P4u5CAsA7BhgGG4SOJXerGfo6AoPL3WrkWtnyz6yfpARMD2czG1sL3ojaUbw2Xu96r9hdt2LQvxRJkkyNc45iXV1rXICzlDcr0FqZ4ljOmP0w0udyoZEA">
+      <h3>Blouse Embroidery</h3>
+      <a href="custom stitching.html" class="stitch-btn">Custom Stitching</a>
+
+    </div>
+
+    <div class="card">
+      <img src="https://mysilklove.com/cdn/shop/files/MSL-B4_1d476901-43b8-4381-83a5-ff5dac106282.jpg?v=1720780967&width=1946">
+      <h3>Saree Embroidery</h3>
+      <a href="custom stitching.html" class="stitch-btn">Custom Stitching</a>
+
+    </div>
+
+    <div class="card">
+      <img src="https://doeraa.com/cdn/shop/files/multi-thread-with-gold-zari-floral-embroidery-work-on-beige-georgette-dupatta-with-border-608521.jpg?v=1715336926&width=2048">
+      <h3>Dupatta Embroidery</h3>
+      <a href="custom stitching.html" class="stitch-btn">Custom Stitching</a>
+
+    </div>
+
+    <div class="card">
+      <img src="https://clothsvilla.com/cdn/shop/products/555_2-jpg_1024x1024.webp?v=1680589546">
+      <h3>Suit Embroidery</h3><a href="custom stitching.html" class="stitch-btn">Custom Stitching</a>
+
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 STITCHORA — All Rights Reserved
+</footer>
+
+</body>
+</html>
