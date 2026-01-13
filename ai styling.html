@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Styling | Stitchora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+}
+
+/* HEADER */
+header{
+  background:#111;
+  color:#fff;
+  padding:18px;
+  text-align:center;
+  font-size:22px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:700px;
+  background:#fff;
+  margin:40px auto;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#333;
+}
+
+/* FORM */
+label{
+  display:block;
+  margin-top:18px;
+  font-size:14px;
+}
+
+select, input{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* UPLOAD BOX */
+.upload-box{
+  margin-top:10px;
+  border:2px dashed #b22222;
+  border-radius:12px;
+  padding:25px;
+  text-align:center;
+  cursor:pointer;
+  background:#fffafa;
+  position:relative;
+}
+
+.upload-box:hover{
+  background:#ffecec;
+}
+
+.upload-box span{
+  font-size:40px;
+}
+
+.upload-box h4{
+  margin-top:10px;
+  color:#b22222;
+}
+
+.upload-box input{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  cursor:pointer;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  margin-top:25px;
+  padding:14px;
+  background:#b22222;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#8b1a1a;
+}
+
+/* RESULT */
+.result-box{
+  display:none;
+  margin-top:30px;
+  padding:20px;
+  background:#f9f9f9;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+.result-box h3{
+  color:#b22222;
+  margin-bottom:10px;
+}
+
+.result-box ul{
+  margin-left:18px;
+}
+
+.result-box li{
+  margin-bottom:6px;
+}
+</style>
+</head>
+
+<body>
+
+<header>AI Styling – Stitchora</header>
+
+<div class="container">
+<h2>Get Your Personal Style Suggestions</h2>
+
+<form onsubmit="getSuggestions(event)">
+
+  <label>Select Category</label>
+  <select id="category" required>
+    <option value="">Choose</option>
+    <option>Ethnic Wear</option>
+    <option>Western Wear</option>
+    <option>Party Wear</option>
+    <option>Office Wear</option>
+  </select>
+
+  <label>Occasion</label>
+  <select id="occasion" required>
+    <option value="">Choose</option>
+    <option>Wedding</option>
+    <option>Festival</option>
+    <option>Casual Outing</option>
+    <option>Office Meeting</option>
+    <option>Party</option>
+  </select>
+
+  <label>Preferred Color</label>
+  <input type="text" id="color" placeholder="Eg: Wine, Pastel Pink, Black">
+
+  <label>Upload Your Outfit Photo (optional)</label>
+  <div class="upload-box">
+    <span>🤖</span>
+    <h4>Upload Image</h4>
+    <input type="file" accept="image/*">
+  </div>
+
+  <button type="submit">Get AI Suggestions</button>
+</form>
+
+<div class="result-box" id="resultBox">
+  <h3>Your Style Suggestions</h3>
+  <ul id="resultList"></ul>
+</div>
+
+</div>
+
+<script>
+function getSuggestions(e){
+  e.preventDefault();
+
+  const category = document.getElementById("category").value;
+  const occasion = document.getElementById("occasion").value;
+  const color = document.getElementById("color").value || "neutral shades";
+
+  const resultBox = document.getElementById("resultBox");
+  const resultList = document.getElementById("resultList");
+
+  resultList.innerHTML = "";
+
+  let suggestions = [];
+
+  if(category === "Ethnic Wear"){
+    suggestions = [
+      "Outfit: Try a " + color + " Anarkali or saree with subtle embroidery",
+      "Jewellery: Pair with gold jhumkas or kundan earrings",
+      "Accessories: Add a matching potli bag or embroidered clutch",
+      "Footwear: Go for embellished juttis or block-heel sandals",
+      "Styling tip: Soft curls or a low bun will complete the look"
+    ];
+  }
+
+  else if(category === "Western Wear"){
+    suggestions = [
+      "Outfit: Choose a " + color + " midi dress or co-ord set",
+      "Jewellery: Minimal studs or small hoops work best",
+      "Accessories: Add a sleek sling bag or tote",
+      "Footwear: White sneakers for casual, nude heels for dressy",
+      "Styling tip: Keep makeup natural with a bold lip"
+    ];
+  }
+
+  else if(category === "Party Wear"){
+    suggestions = [
+      "Outfit: Go for a sequined or satin " + color + " outfit",
+      "Jewellery: Statement earrings or layered chains",
+      "Accessories: Carry a metallic clutch",
+      "Footwear: Stilettos or pointed-toe heels",
+      "Styling tip: Smokey eyes with nude lips look perfect for parties"
+    ];
+  }
+
+  else if(category === "Office Wear"){
+    suggestions = [
+      "Outfit: Opt for a " + color + " kurti or formal blouse with trousers",
+      "Jewellery: Small pearls or delicate studs",
+      "Accessories: Structured handbag or laptop tote",
+      "Footwear: Comfortable block heels or classy loafers",
+      "Styling tip: Keep hair neat in a ponytail or low bun"
+    ];
+  }
+
+  else{
+    suggestions = [
+      "Outfit: Choose something in " + color + " that feels comfortable",
+      "Jewellery: Simple earrings and a watch",
+      "Accessories: Light scarf or sling bag",
+      "Footwear: Flats or casual sneakers",
+      "Styling tip: Comfort first always looks stylish"
+    ];
+  }
+
+  suggestions.forEach(item=>{
+    const li = document.createElement("li");
+    li.textContent = item;
+    resultList.appendChild(li);
+  });
+
+  resultBox.style.display = "block";
+}
+</script>
+
+</body>
+</html>
