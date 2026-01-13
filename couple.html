@@ -199,8 +199,33 @@
     grid-template-columns: 1fr;
   }
 }
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+  position:relative;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#ff3f6c;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
 </style>
 </head>
+
+
 
 <body>
 
@@ -226,9 +251,18 @@
   </div>
 
   <div class="nav-right">
-    <a href="login.html" class="auth-btn">Login</a>
-    <a href="signup.html" class="auth-btn">Register</a>
-  </div>
+
+  <!-- CART ICON -->
+  <div class="cart-icon" onclick="location.href='cart.html'">
+  🛒 <span id="cartCount">0</span>
+</div>
+
+
+  <button class="auth-btn">Login</button>
+  <button class="auth-btn">Register</button>
+
+</div>
+
 </header>
 
 <section class="hero"></section>
@@ -253,6 +287,13 @@
   <p>Create stunning couple outfits with expert tailors.</p>
   
 </section>
+<script>
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").innerText = cart.length;
+}
 
+updateCartCount();
+</script>
 </body>
 </html>
