@@ -31,6 +31,7 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
+
 /* LEFT */
 .nav-left {
   display: flex;
@@ -325,8 +326,58 @@ footer p {
   transform: translateY(-8px);
 }
 
+
+.cart-icon{
+  position: relative;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-8px;
+  background:#ff3f6c;
+  color:white;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+  position:relative;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#ff3f6c;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
 </style>
+
 </head>
+<script>
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").innerText = cart.length;
+}
+
+updateCartCount();
+</script>
 
 <body>
 
@@ -352,9 +403,17 @@ footer p {
   </div>
 
   <div class="nav-right">
-    <button class="auth-btn">Login</button>
-    <button class="auth-btn">Register</button>
-  </div>
+
+  <div class="cart-icon" onclick="location.href='cart.html'">
+  🛒 <span id="cartCount">0</span>
+</div>
+
+
+  <button class="auth-btn">Login</button>
+  <button class="auth-btn">Register</button>
+
+</div>
+
 </header>
 
 
@@ -474,6 +533,23 @@ It’s personal.
     </div>
   </div>
 </footer>
+<script>
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let count = cart.reduce((sum, item) => sum + item.qty, 0);
+  const el = document.getElementById("cartCount");
+  if(el) el.innerText = count;
+}
+updateCartCount();
+</script>
 
+<script>
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").innerText = cart.length;
+}
+
+updateCartCount();
+</script>
 </body>
 </html>
