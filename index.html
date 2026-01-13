@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  html {
+html {
   scroll-behavior: smooth;
 }
 * {
@@ -30,7 +30,6 @@ body {
   background: #D9DBD2;
   border-bottom: 1px solid #ddd;
 }
-
 
 /* LEFT */
 .nav-left {
@@ -85,6 +84,22 @@ body {
   align-items: center;
   gap: 14px;
 }
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+  position:relative;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#ff3f6c;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
 
 .auth-btn {
   padding: 8px 22px;
@@ -95,6 +110,7 @@ body {
   background: transparent;
   cursor: pointer;
   transition: 0.25s;
+  text-decoration: none;   /* this removes the line */
 }
 
 .auth-btn:hover {
@@ -118,41 +134,29 @@ body {
   animation: fadeSlide 16s infinite;
 }
 
-
 .slide:nth-child(1) {
-  background: url(images/m1.jpg) center/cover;
+  background: url(images/m1.jpeg) center/cover;
 }
 .slide:nth-child(2) {
-  background: url(images/m2.jpg) center/cover;
+  background: url(images/m2.jpeg) center/cover;
   animation-delay: 4s;
 }
 .slide:nth-child(3) {
-  background: url(images/m3.jpg) center/cover;
+  background: url(images/m3.jpeg) center/cover;
   animation-delay: 8s;
 }
 .slide:nth-child(4) {
-  background: url(images/m4.jpg) center/cover;
+  background: url(images/m4.jpeg) center/cover;
   animation-delay: 12s;
 }
 
 @keyframes fadeSlide {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
 }
-
 
 .hero-content {
   position: relative;
@@ -179,21 +183,6 @@ body {
   margin-bottom: 30px;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-}
-
-.hero-buttons button {
-  padding: 12px 30px;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-  background: #ff4d4d;
-  color: white;
-  border-radius: 4px;
-}
-
 /* ================= SECTIONS ================= */
 .section {
   padding: 80px 40px;
@@ -211,8 +200,7 @@ body {
 }
 
 .section p {
-  
- max-width: 900px;
+  max-width: 900px;
   margin: auto;
   line-height: 1.7;
 }
@@ -284,14 +272,11 @@ footer p {
     font-size: 34px;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-  }
-
   .search-bar {
     width: 260px;
   }
 }
+
 /* ================= CATEGORY BUTTON CARDS ================= */
 .category-buttons {
   display: flex;
@@ -302,7 +287,7 @@ footer p {
 }
 
 .cat-card {
-    background-color: #fff;
+  background-color: #fff;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
@@ -325,59 +310,9 @@ footer p {
 .cat-card:hover {
   transform: translateY(-8px);
 }
-
-
-.cart-icon{
-  position: relative;
-  font-size: 22px;
-  cursor: pointer;
-  padding: 6px 10px;
-}
-
-#cartCount{
-  position:absolute;
-  top:-6px;
-  right:-8px;
-  background:#ff3f6c;
-  color:white;
-  font-size:12px;
-  padding:2px 6px;
-  border-radius:50%;
-}
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.cart-icon{
-  font-size:22px;
-  cursor:pointer;
-  position:relative;
-}
-
-#cartCount{
-  position:absolute;
-  top:-6px;
-  right:-10px;
-  background:#ff3f6c;
-  color:#fff;
-  font-size:12px;
-  padding:2px 6px;
-  border-radius:50%;
-}
-
 </style>
-
 </head>
-<script>
-function updateCartCount(){
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("cartCount").innerText = cart.length;
-}
 
-updateCartCount();
-</script>
 
 <body>
 
@@ -402,18 +337,17 @@ updateCartCount();
       placeholder="Search for styles, fabrics, designs...">
   </div>
 
-  <div class="nav-right">
 
-  <div class="cart-icon" onclick="location.href='cart.html'">
+  
+  <div class="nav-right">
+    <div class="cart-icon" onclick="location.href='cart.html'">
   🛒 <span id="cartCount">0</span>
 </div>
-
-
-  <button class="auth-btn">Login</button>
-  <button class="auth-btn">Register</button>
-
-</div>
-
+<br>
+    <a href="login.html" class="auth-btn">Login</a>
+    <a href="register.html" class="auth-btn">Register</a>
+    
+  </div>
 </header>
 
 
@@ -458,7 +392,7 @@ updateCartCount();
 <section class="section" id="about">
   <h3>About Us</h3>
   <p>
-    STITCHORA is a smart fashion design and customization platform that allows
+    STITCH is a smart fashion design and customization platform that allows
     designers, tailors and brands to create made-to-measure garments with ease.
     From 3D visualization to production-ready patterns, we simplify fashion creation.
     Stitchora was built on a simple idea: clothes should fit people, not the other way around.
@@ -533,23 +467,6 @@ It’s personal.
     </div>
   </div>
 </footer>
-<script>
-function updateCartCount(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let count = cart.reduce((sum, item) => sum + item.qty, 0);
-  const el = document.getElementById("cartCount");
-  if(el) el.innerText = count;
-}
-updateCartCount();
-</script>
 
-<script>
-function updateCartCount(){
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("cartCount").innerText = cart.length;
-}
-
-updateCartCount();
-</script>
 </body>
 </html>
