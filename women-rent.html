@@ -77,6 +77,29 @@ body{
   border-radius:6px;
 }
 .rent-btn:hover{background:#8b1a1a;}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+  position:relative;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#ff3f6c;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
 </style>
 </head>
 
@@ -98,29 +121,42 @@ body{
 <section class="products">
 
   <div class="product-card">
-    <img src="images/women1.jpg">
-    <div class="product-info">
-      <h3>Crimson Lehenga</h3>
-      <p class="price">₹1499 / day</p>
-      <a href="rent-booking.html?name=Crimson Lehenga&price=1499&img=images/women1.jpg" class="rent-btn">Rent Now</a>
-    </div>
+  <img src="images/women1.jpg" alt="Crimson Lehenga">
+
+  <div class="product-info">
+    <h3>Crimson Lehenga</h3>
+    <p class="price">₹1499 / day</p>
+
+    <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Crimson%20Lehenga&price=1499&img=images/women1.jpg">
+      Rent Now
+    </a>
   </div>
+</div>
+
 
   <div class="product-card">
-    <img src="images/women2.jpg">
+    <img src="images/women2.jpg" alt="Midnight Saree">
+
     <div class="product-info">
       <h3>Midnight Saree</h3>
       <p class="price">₹999 / day</p>
-      <a href="rent-booking.html?name=Midnight Saree&price=999&img=images/women2.jpg" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Midnight Saree&price=999&img=images/women2.jpg">Rent Now</a>
     </div>
   </div>
 
   <div class="product-card">
-    <img src="images/women3.jpg">
+    <img src="images/women3.jpg" alt=">Rose Blush Gown">
     <div class="product-info">
       <h3>Rose Blush Gown</h3>
       <p class="price">₹1299 / day</p>
-      <a href="rent-booking.html?name=Rose Blush Gown&price=1299&img=images/women3.jpg" class="rent-btn">Rent Now</a>
+
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Rose Blush Gown&price=1299&img=images/women3.jpg" >Rent Now</a>
     </div>
   </div>
 
@@ -129,7 +165,9 @@ body{
     <div class="product-info">
       <h3>Ivory Sharara Set</h3>
       <p class="price">₹899 / day</p>
-      <a href="rent-booking.html?name=Ivory Sharara Set&price=899" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Ivory Sharara Set&price=899" >Rent Now</a>
     </div>
   </div>
 
@@ -138,7 +176,9 @@ body{
     <div class="product-info">
       <h3>Mint Pastel Anarkali</h3>
       <p class="price">₹1499 / day</p>
-      <a href="rent-booking.html?name=Mint Pastel Anarkali&price=1499" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Mint Pastel Anarkali&price=1499" >Rent Now</a>
     </div>
   </div>
 
@@ -147,7 +187,9 @@ body{
     <div class="product-info">
       <h3>Floral Fusion Set</h3>
       <p class="price">₹1399 / day</p>
-      <a href="rent-booking.html?name=Floral Fusion Set&price=1399" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Floral Fusion Set&price=1399" >Rent Now</a>
     </div>
   </div>
 
@@ -156,7 +198,9 @@ body{
     <div class="product-info">
       <h3>Olive Green Lehenga</h3>
       <p class="price">₹1999 / day</p>
-      <a href="rent-booking.html?name=Olive Green Lehenga&price=1999" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Olive Green Lehenga&price=1999" >Rent Now</a>
     </div>
   </div>
 
@@ -165,7 +209,9 @@ body{
     <div class="product-info">
       <h3>Royal Blue Saree</h3>
       <p class="price">₹1099 / day</p>
-      <a href="rent-booking.html?name=Royal Blue Saree&price=1099" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Royal Blue Saree&price=1099" >Rent Now</a>
     </div>
   </div>
 
@@ -174,7 +220,9 @@ body{
     <div class="product-info">
       <h3>Sapphire Evening Gown</h3>
       <p class="price">₹1199 / day</p>
-      <a href="rent-booking.html?name=Sapphire Evening Gown&price=1199" class="rent-btn">Rent Now</a>
+      <a
+      class="rent-btn"
+       href="rent-booking.html?name=Sapphire Evening Gown&price=1199" >Rent Now</a>
     </div>
   </div>
 
@@ -183,7 +231,9 @@ body{
     <div class="product-info">
       <h3>Emerald Velvet Lehenga</h3>
       <p class="price">₹1499 / day</p>
-      <a href="rent-booking.html?name=Emerald Velvet Lehenga&price=1499" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Emerald Velvet Lehenga&price=1499" class="rent-btn">Rent Now</a>
     </div>
   </div>
 
@@ -192,7 +242,9 @@ body{
     <div class="product-info">
       <h3>Heavy Bridal Saree</h3>
       <p class="price">₹1099 / day</p>
-      <a href="rent-booking.html?name=Heavy Bridal Saree&price=1099" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Heavy Bridal Saree&price=1099" class="rent-btn">Rent Now</a>
     </div>
   </div>
 
@@ -201,7 +253,9 @@ body{
     <div class="product-info">
       <h3>Silver Sequin Gown</h3>
       <p class="price">₹1399 / day</p>
-      <a href="rent-booking.html?name=Silver Sequin Gown&price=1399" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Silver Sequin Gown&price=1399" class="rent-btn">Rent Now</a>
     </div>
   </div>
 
@@ -210,7 +264,9 @@ body{
     <div class="product-info">
       <h3>Purple Silk Kurta</h3>
       <p class="price">₹999 / day</p>
-      <a href="rent-booking.html?name=Purple Silk Kurta&price=999" class="rent-btn">Rent Now</a>
+      <a
+      class="rent-btn"
+       href="rent-booking.html?name=Purple Silk Kurta&price=999" class="rent-btn">Rent Now</a>
     </div>
   </div>
 
@@ -219,7 +275,9 @@ body{
     <div class="product-info">
       <h3>Sky Blue Net Anarkali</h3>
       <p class="price">₹1599 / day</p>
-      <a href="rent-booking.html?name=Sky Blue Net Anarkali&price=1599" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Sky Blue Net Anarkali&price=1599" class="rent-btn">Rent Now</a>
     </div>
   </div>
 
@@ -228,7 +286,9 @@ body{
     <div class="product-info">
       <h3>Cream Wedding Gown</h3>
       <p class="price">₹1499 / day</p>
-      <a href="rent-booking.html?name=Cream Wedding Gown&price=1499" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Cream Wedding Gown&price=1499" class="rent-btn">Rent Now</a>
     </div>
   </div>
 
@@ -237,7 +297,9 @@ body{
     <div class="product-info">
       <h3>Grey Stone Anarkali</h3>
       <p class="price">₹1699 / day</p>
-      <a href="rent-booking.html?name=Grey Stone Anarkali&price=1699" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Grey Stone Anarkali&price=1699" class="rent-btn">Rent Now</a>
     </div>
   </div>
 
@@ -246,7 +308,9 @@ body{
     <div class="product-info">
       <h3>Wine Maroon Sharara</h3>
       <p class="price">₹1299 / day</p>
-      <a href="rent-booking.html?name=Wine Maroon Sharara&price=1299" class="rent-btn">Rent Now</a>
+      <a
+      class="rent-btn"
+       href="rent-booking.html?name=Wine Maroon Sharara&price=1299" >Rent Now</a>
     </div>
   </div>
 
@@ -255,7 +319,9 @@ body{
     <div class="product-info">
       <h3>Champagne Slit Gown</h3>
       <p class="price">₹1399 / day</p>
-      <a href="rent-booking.html?name=Champagne Slit Gown&price=1399" class="rent-btn">Rent Now</a>
+      <a
+      class="rent-btn"
+       href="rent-booking.html?name=Champagne Slit Gown&price=1399" >Rent Now</a>
     </div>
   </div>
 
@@ -264,7 +330,9 @@ body{
     <div class="product-info">
       <h3>Ruby Red Saree</h3>
       <p class="price">₹1199 / day</p>
-      <a href="rent-booking.html?name=Ruby Red Saree&price=1199" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Ruby Red Saree&price=1199" >Rent Now</a>
     </div>
   </div>
 
@@ -273,7 +341,9 @@ body{
     <div class="product-info">
       <h3>Mauve Shimmer Gown</h3>
       <p class="price">₹1599 / day</p>
-      <a href="rent-booking.html?name=Mauve Shimmer Gown&price=1599" class="rent-btn">Rent Now</a>
+      <a 
+      class="rent-btn"
+      href="rent-booking.html?name=Mauve Shimmer Gown&price=1599" >Rent Now</a>
     </div>
   </div>
 
@@ -282,7 +352,9 @@ body{
     <div class="product-info">
       <h3>Lavender Puff Gown</h3>
       <p class="price">₹1399 / day</p>
-      <a href="rent-booking.html?name=Lavender Puff Gown&price=1399" class="rent-btn">Rent Now</a>
+      <a
+      class="rent-btn"
+       href="rent-booking.html?name=Lavender Puff Gown&price=1399">Rent Now</a>
     </div>
   </div>
 
@@ -291,11 +363,21 @@ body{
     <div class="product-info">
       <h3>Peach Floral Suit</h3>
       <p class="price">₹999 / day</p>
-      <a href="rent-booking.html?name=Peach Floral Suit&price=999" class="rent-btn">Rent Now</a>
+      <a
+      class="rent-btn"
+       href="rent-booking.html?name=Peach Floral Suit&price=999" >Rent Now</a>
     </div>
   </div>
 
 </section>
+<script>
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").innerText = cart.length;
+}
+
+updateCartCount();
+</script>
 
 </body>
 </html>
