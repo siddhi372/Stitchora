@@ -206,31 +206,54 @@ button:hover{
     display:none;
   }
 }
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+  position:relative;
+}
+
+#cartCount{
+  position:absolute;
+  top:-6px;
+  right:-10px;
+  background:#ff3f6c;
+  color:#fff;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
 </style>
 </head>
+
 
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-left">
-    <img src="images/logo.png" class="logo-img" alt="Logo">
+    <img src="images/logo.png" class="logo-img">
     <span class="brand-text">STITCHORA</span>
   </div>
 
-  <div class="nav-center">
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="men.html">Men</a>
-      <a href="women.html">Women</a>
-      <a href="couple.html" class="active">Couple</a>
-    </nav>
-    <input type="text" class="search-bar" placeholder="Search couple outfits...">
-  </div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="couple-rent.html" class="active">Couple</a>
+  </nav>
 
   <div class="nav-right">
-    <a href="login.html" class="auth-btn">Login</a>
-    <a href="signup.html" class="auth-btn">Register</a>
+   <div class="cart-icon" onclick="location.href='cart.html'">
+  🛒 <span id="cartCount">0</span>
+</div>
+
   </div>
 </header>
 
@@ -269,7 +292,8 @@ button:hover{
     <input type="date" required>
 
     <!-- ✅ Button and note -->
-    <button type="submit">Request Tailor Visit</button>
+    <button type="button" onclick="addStitchingToCart()">Request Tailor Visit</button>
+
     <p class="note">
       Don’t worry — 2 tailors will be provided, one for men and one for women measurements.😄
     </p>
@@ -283,6 +307,14 @@ function preview(event, id){
   img.src = URL.createObjectURL(event.target.files[0]);
   img.style.display = "block";
 }
+</script>
+<script>
+function updateCartCount(){
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").innerText = cart.length;
+}
+
+updateCartCount();
 </script>
 
 </body>
